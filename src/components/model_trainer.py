@@ -45,6 +45,8 @@ class ModelTrainer:
                 "Gradient Boosting": GradientBoostingRegressor()
             }
 
+            
+
             model_report: dict = evaluate_model(X_train=X_train, y_train=y_train,X_test = X_test, y_test = y_test, models = models)
 
             best_model_score = max(sorted(model_report.values()))
@@ -67,4 +69,4 @@ class ModelTrainer:
             r2_square = r2_score(y_test, predicted)
             return r2_square
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e,sys) 
